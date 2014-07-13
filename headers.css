@@ -1,0 +1,283 @@
+/* -------------------------------------------------------------------
+  HEADERS: layout
+  Form factor or Skin dependent styles should NOT be defined here.
+------------------------------------------------------------------- */
+
+header {
+  position: relative;
+  display: block;
+  z-index: 10;
+  padding: 0;
+  height: 3rem;
+  border: none;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  line-height: 3rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0 1rem;
+  height: 100%;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+}
+
+header h1 em {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1em;
+  font-style: normal;
+}
+
+header menu {
+  height: 100%;
+  float: right;
+  padding: 0;
+  margin: 0;
+}
+
+/* ----------------------------------
+  Buttons
+---------------------------------- */
+
+header a,
+header button {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  float: left;
+  min-width: 3rem;
+  width: auto;
+  height: 3rem;
+  border: none;
+  background: none;
+  padding: 0 1rem;
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 5rem;
+  border-radius: 0;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: none;
+  font-style: italic;
+}
+
+/* Pressed state */
+header a:focus {
+  outline: none;
+}
+
+header button::-moz-focus-inner {
+  outline: none;
+  border: none;
+  margin-top: -0.2rem; /* To fix line-height bug (697451) */
+  padding: 0;
+}
+
+/* Disabled state */
+header a[aria-disabled="true"],
+header button[disabled] {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* ----------------------------------
+  Icons
+---------------------------------- */
+
+header .icon {
+  display: block;
+  width: 1.6rem;
+  height: 3rem;
+  background: transparent no-repeat center / 1.6rem auto;
+  font-size: 0;
+}
+
+/* -----------------------------------------------------------------
+  HEADER SKIN: default
+  Default values in case we are not overriding them using
+  class="skin-*"
+----------------------------------------------------------------- */
+
+header {
+  color: #fff;
+  background-color: #f97c17;
+}
+
+header h1 {
+  color: #fff;
+}
+
+header a,
+header button {
+  color: rgba(0,0,0,0.6);
+}
+
+header a:active,
+header button:active,
+header a:hover,
+header button:hover {
+  background-color: rgba(0,0,0,0.07);
+}
+
+header a:focus,
+header button:focus {
+  background-color: transparent;
+}
+
+/* ----------------------------------
+  Icons
+---------------------------------- */
+
+header .icon-add {
+  background-image: url(headers/images/icons/add.png);
+}
+
+header .icon-compose {
+  background-image: url(headers/images/icons/compose.png);
+}
+
+header .icon-edit {
+  background-image: url(headers/images/icons/edit.png);
+}
+
+header .icon-send {
+  background-image: url(headers/images/icons/send.png);
+}
+
+header .icon-close {
+  background-image: url(headers/images/icons/close.png);
+}
+
+header .icon-back {
+  background-image: url(headers/images/icons/back.png);
+}
+
+header .icon-menu {
+  background-image: url(headers/images/icons/menu.png);
+}
+
+header .icon-user {
+  background-image: url(headers/images/icons/user.png);
+}
+
+header .icon-up {
+  background-image: url(headers/images/icons/up.png);
+}
+
+header .icon-down {
+  background-image: url(headers/images/icons/down.png);
+}
+
+header .icon-options {
+  background-image: url(headers/images/icons/options.png);
+}
+
+/* -----------------------------------------------------------------
+  HEADER SKIN: comms
+  .skin-comms will override default values
+----------------------------------------------------------------- */
+
+.skin-comms header {
+  background-color: #00adad;
+}
+
+.skin-comms header a,
+.skin-comms header button {
+  color: rgba(0,0,0,0.5);
+}
+
+.skin-comms header a:active,
+.skin-comms header button:active,
+.skin-comms header a:hover,
+.skin-comms header button:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.skin-comms header a:focus,
+.skin-comms header button:focus {
+  background-color: transparent;
+}
+
+/* -----------------------------------------------------------------
+  HEADER SKIN: dark
+  .skin-dark will override default values
+----------------------------------------------------------------- */
+
+.skin-dark header {
+  background-color: #242d33;
+}
+
+.skin-dark header a,
+.skin-dark header button {
+  color: #00aac5;
+}
+
+.skin-dark header a:active,
+.skin-dark header button:active,
+.skin-dark header a:hover,
+.skin-dark header button:hover {
+  background-color: rgba(0,0,0,0.4);
+}
+
+.skin-dark header a:focus,
+.skin-dark header button:focus {
+  background-color: transparent;
+}
+
+.skin-dark header h2 {
+  background-color: #2c353b;
+  color: #fff;
+  border: none;
+}
+
+/* -----------------------------------------------------------------
+  HEADER SKIN: organic
+  .skin-organic will override default values
+----------------------------------------------------------------- */
+
+.skin-organic header {
+  color: #868692;
+  background-color: #f4f4f4;
+}
+
+.skin-organic header h1 {
+  color: #868692;
+}
+
+.skin-organic header a,
+.skin-organic header button {
+  color: #00aac5;
+}
+
+.skin-organic header a:focus,
+.skin-organic header button:focus {
+  background-color: transparent;
+}
+
+/* ----------------------------------
+  Icons
+---------------------------------- */
+
+.skin-organic header .icon-back {
+  background-image: url(headers/images/icons/organic/back.png);
+}
+
+.skin-organic header .icon-close {
+  background-image: url(headers/images/icons/organic/close.png);
+}
+
+.skin-organic header .icon-add {
+  background-image: url(headers/images/icons/organic/add.png);
+}
+
+.skin-organic header .icon-edit {
+  background-image: url(headers/images/icons/organic/edit.png);
+}
