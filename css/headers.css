@@ -77,7 +77,7 @@ header a:focus {
 header button::-moz-focus-inner {
   outline: none;
   border: none;
-  margin-top: -0.2rem; /* To fix line-height bug (697451) */
+  margin-top: -0.2rem;
   padding: 0;
 }
 
@@ -125,11 +125,6 @@ header button:active,
 header a:hover,
 header button:hover {
   background-color: rgba(0,0,0,0.07);
-}
-
-header a:focus,
-header button:focus {
-  background-color: transparent;
 }
 
 /* ----------------------------------
