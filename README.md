@@ -1,6 +1,6 @@
 Compress
 ========
-CSS Mobile Framework based [Building Firefox OS](http://buildingfirefoxos.com/)
+Templates based [Building Firefox OS](http://buildingfirefoxos.com/)
 
 ### Remove unnecessary images
 
