@@ -3,35 +3,21 @@
   Form factor or Skin dependent styles should NOT be defined here.
 ------------------------------------------------------------------- */
 
-header {
+section[role="region"] > header:first-child {
   position: relative;
-  display: table;
+  display: block;
   z-index: 10;
   padding: 0;
-  height: 3rem;
+  height: 5rem;
   border: none;
-  width: 100%;
-  margin: 0;
 }
-header h1 {
-  margin: 0 auto; 
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 3rem;
+
+section[role="region"] > header:first-child h1 {
+  font-size: 2.3rem;
+  line-height: 5rem;
   white-space: nowrap;
   text-overflow: ellipsis;
-  height: 50%;
-  font-weight: 300;
-  font-style: italic;  
-  display: table-cell;
-  vertical-align: middle;
-}
-/*header h1 {
-  font-size: 1.5rem;
-  line-height: 3rem;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  display: inline;
+  display: block;
   overflow: hidden;
   margin: 0;
   padding: 0 1rem;
@@ -39,35 +25,36 @@ header h1 {
   font-weight: 300;
   font-style: italic;
   text-align: center;
-}*/
-
-header h1 em {
-  /*font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1em;
-  font-style: normal;*/
 }
 
-header menu {
-  /*height: 100%;
+section[role="region"] > header:first-child h1 em {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1em;
+  font-style: normal;
+}
+
+section[role="region"] > header:first-child menu {
+  height: 100%;
   float: right;
   padding: 0;
-  margin: 0;*/
+  margin: 0;
 }
 
 /* ----------------------------------
   Buttons
 ---------------------------------- */
 
-header a,
-header button {
+section[role="region"] > header:first-child a,
+section[role="region"] > header:first-child button {
   box-sizing: border-box;
   position: relative;
-  display: inline-block;
-  overflow: hidden;  
-  min-width: 3rem;
+  display: block;
+  overflow: hidden;
+  float: left;
+  min-width: 5rem;
   width: auto;
-  height: 3rem;
+  height: 5rem;
   border: none;
   background: none;
   padding: 0 1rem;
@@ -82,28 +69,21 @@ header button {
   font-style: italic;
 }
 
-.left {
-  float: left;
-}
-.right {
-  float: right;  
-}
-
 /* Pressed state */
-header a:focus {
+section[role="region"] > header:first-child a:focus {
   outline: none;
 }
 
-header button::-moz-focus-inner {
+section[role="region"] > header:first-child button::-moz-focus-inner {
   outline: none;
   border: none;
-  margin-top: -0.2rem;
+  margin-top: -0.2rem; /* To fix line-height bug (697451) */
   padding: 0;
 }
 
 /* Disabled state */
-header a[aria-disabled="true"],
-header button[disabled] {
+section[role="region"] > header:first-child a[aria-disabled="true"],
+section[role="region"] > header:first-child button[disabled] {
   opacity: 0.3;
   pointer-events: none;
 }
@@ -112,12 +92,46 @@ header button[disabled] {
   Icons
 ---------------------------------- */
 
-header .icon {
+section[role="region"] > header:first-child .icon {
   display: block;
-  width: 1.6rem;
-  height: 3rem;
-  background: transparent no-repeat center / 1.6rem auto;
+  width: 3rem;
+  height: 5rem;
+  background: transparent no-repeat center / 3rem auto;
   font-size: 0;
+}
+
+/* ----------------------------------
+  Subheader
+---------------------------------- */
+
+section[role="region"] > header {
+  z-index: 0;
+  height: auto;
+}
+
+section[role="region"] header h2 {
+  margin: 0;
+  padding: 0.8rem 3rem;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+
+/* ----------------------------------
+  right-to-left
+---------------------------------- */
+
+html[dir="rtl"] section[role="region"] > header:first-child menu {
+  float: left;
+}
+
+html[dir="rtl"] section[role="region"] > header:first-child button,
+html[dir="rtl"] section[role="region"] > header:first-child a {
+  float: right;
+}
+
+html[dir="rtl"] section[role="region"] > header:first-child .icon-back {
+  transform: rotate(180deg);
 }
 
 /* -----------------------------------------------------------------
@@ -126,73 +140,87 @@ header .icon {
   class="skin-*"
 ----------------------------------------------------------------- */
 
-header {
+section[role="region"] > header:first-child {
   color: #fff;
   background-color: #f97c17;
 }
 
-header h1 {
+section[role="region"] > header:first-child h1 {
   color: #fff;
 }
 
-header a,
-header button {
+section[role="region"] > header:first-child a,
+section[role="region"] > header:first-child button {
   color: rgba(0,0,0,0.6);
 }
 
-header a:active,
-header button:active,
-header a:hover,
-header button:hover {
+section[role="region"] > header:first-child a:active,
+section[role="region"] > header:first-child button:active,
+section[role="region"] > header:first-child a:hover,
+section[role="region"] > header:first-child button:hover {
   background-color: rgba(0,0,0,0.07);
+}
+
+section[role="region"] > header:first-child a:focus,
+section[role="region"] > header:first-child button:focus {
+  background-color: transparent;
 }
 
 /* ----------------------------------
   Icons
 ---------------------------------- */
 
-header .icon-add {
+section[role="region"] > header:first-child .icon-add {
   background-image: url(headers/images/icons/add.png);
 }
 
-header .icon-compose {
+section[role="region"] > header:first-child .icon-compose {
   background-image: url(headers/images/icons/compose.png);
 }
 
-header .icon-edit {
+section[role="region"] > header:first-child .icon-edit {
   background-image: url(headers/images/icons/edit.png);
 }
 
-header .icon-send {
+section[role="region"] > header:first-child .icon-send {
   background-image: url(headers/images/icons/send.png);
 }
 
-header .icon-close {
+section[role="region"] > header:first-child .icon-close {
   background-image: url(headers/images/icons/close.png);
 }
 
-header .icon-back {
+section[role="region"] > header:first-child .icon-back {
   background-image: url(headers/images/icons/back.png);
 }
 
-header .icon-menu {
+section[role="region"] > header:first-child .icon-menu {
   background-image: url(headers/images/icons/menu.png);
 }
 
-header .icon-user {
+section[role="region"] > header:first-child .icon-user {
   background-image: url(headers/images/icons/user.png);
 }
 
-header .icon-up {
+section[role="region"] > header:first-child .icon-up {
   background-image: url(headers/images/icons/up.png);
 }
 
-header .icon-down {
+section[role="region"] > header:first-child .icon-down {
   background-image: url(headers/images/icons/down.png);
 }
 
-header .icon-options {
+section[role="region"] > header:first-child .icon-options {
   background-image: url(headers/images/icons/options.png);
+}
+
+/* ----------------------------------
+  Subheader
+---------------------------------- */
+
+section[role="region"] header h2 {
+  color: #424242;
+  border-bottom: solid 0.1rem #e6e6e6;
 }
 
 /* -----------------------------------------------------------------
@@ -200,24 +228,33 @@ header .icon-options {
   .skin-comms will override default values
 ----------------------------------------------------------------- */
 
-.skin-comms header {
+.skin-comms section[role="region"] > header:first-child,
+section[role="region"].skin-comms > header:first-child {
   background-color: #00adad;
 }
 
-.skin-comms header a,
-.skin-comms header button {
+.skin-comms section[role="region"] > header:first-child a,
+.skin-comms section[role="region"] > header:first-child button,
+section[role="region"].skin-comms > header:first-child a,
+section[role="region"].skin-comms > header:first-child button {
   color: rgba(0,0,0,0.5);
 }
 
-.skin-comms header a:active,
-.skin-comms header button:active,
-.skin-comms header a:hover,
-.skin-comms header button:hover {
+.skin-comms section[role="region"] > header:first-child a:active,
+.skin-comms section[role="region"] > header:first-child button:active,
+.skin-comms section[role="region"] > header:first-child a:hover,
+.skin-comms section[role="region"] > header:first-child button:hover,
+section[role="region"].skin-comms > header:first-child a:active,
+section[role="region"].skin-comms > header:first-child button:active,
+section[role="region"].skin-comms > header:first-child a:hover,
+section[role="region"].skin-comms > header:first-child button:hover {
   background-color: rgba(0,0,0,0.1);
 }
 
-.skin-comms header a:focus,
-.skin-comms header button:focus {
+.skin-comms section[role="region"] > header:first-child a:focus,
+.skin-comms section[role="region"] > header:first-child button:focus,
+section[role="region"].skin-comms > header:first-child a:focus,
+section[role="region"].skin-comms > header:first-child button:focus {
   background-color: transparent;
 }
 
@@ -226,28 +263,38 @@ header .icon-options {
   .skin-dark will override default values
 ----------------------------------------------------------------- */
 
-.skin-dark header {
+section[role="region"].skin-dark > header:first-child,
+.skin-dark > section[role="region"] > header:first-child {
   background-color: #242d33;
 }
 
-.skin-dark header a,
-.skin-dark header button {
+.skin-dark section[role="region"] > header:first-child a,
+.skin-dark section[role="region"] > header:first-child button,
+section[role="region"].skin-dark > header:first-child a,
+section[role="region"].skin-dark > header:first-child button {
   color: #00aac5;
 }
 
-.skin-dark header a:active,
-.skin-dark header button:active,
-.skin-dark header a:hover,
-.skin-dark header button:hover {
+.skin-dark section[role="region"] > header:first-child a:active,
+.skin-dark section[role="region"] > header:first-child button:active,
+.skin-dark section[role="region"] > header:first-child a:hover,
+.skin-dark section[role="region"] > header:first-child button:hover,
+section[role="region"].skin-dark > header:first-child a:active,
+section[role="region"].skin-dark > header:first-child button:active,
+section[role="region"].skin-dark > header:first-child a:hover,
+section[role="region"].skin-dark > header:first-child button:hover {
   background-color: rgba(0,0,0,0.4);
 }
 
-.skin-dark header a:focus,
-.skin-dark header button:focus {
+.skin-dark section[role="region"] > header:first-child a:focus,
+.skin-dark section[role="region"] > header:first-child button:focus,
+section[role="region"].skin-dark > header:first-child a:focus,
+section[role="region"].skin-dark > header:first-child button:focus {
   background-color: transparent;
 }
 
-.skin-dark header h2 {
+section[role="region"].skin-dark header h2,
+.skin-dark > section[role="region"] header h2 {
   background-color: #2c353b;
   color: #fff;
   border: none;
@@ -258,22 +305,28 @@ header .icon-options {
   .skin-organic will override default values
 ----------------------------------------------------------------- */
 
-.skin-organic header {
+section[role="region"].skin-organic > header:first-child,
+.skin-organic section[role="region"] > header:first-child {
   color: #868692;
   background-color: #f4f4f4;
 }
 
-.skin-organic header h1 {
+section[role="region"].skin-organic > header:first-child h1,
+.skin-organic section[role="region"] > header:first-child h1 {
   color: #868692;
 }
 
-.skin-organic header a,
-.skin-organic header button {
+section[role="region"].skin-organic > header:first-child a,
+section[role="region"].skin-organic > header:first-child button,
+.skin-organic section[role="region"] > header:first-child a,
+.skin-organic section[role="region"] > header:first-child button {
   color: #00aac5;
 }
 
-.skin-organic header a:focus,
-.skin-organic header button:focus {
+section[role="region"].skin-organic > header:first-child a:focus,
+section[role="region"].skin-organic > header:first-child button:focus,
+.skin-organic section[role="region"] > header:first-child a:focus,
+.skin-organic section[role="region"] > header:first-child button:focus {
   background-color: transparent;
 }
 
@@ -281,18 +334,33 @@ header .icon-options {
   Icons
 ---------------------------------- */
 
-.skin-organic header .icon-back {
+section[role="region"].skin-organic > header:first-child .icon-back,
+.skin-organic section[role="region"] > header:first-child .icon-back {
   background-image: url(headers/images/icons/organic/back.png);
 }
 
-.skin-organic header .icon-close {
+section[role="region"].skin-organic > header:first-child .icon-close,
+.skin-organic section[role="region"] > header:first-child .icon-close {
   background-image: url(headers/images/icons/organic/close.png);
 }
 
-.skin-organic header .icon-add {
+section[role="region"].skin-organic > header:first-child .icon-add,
+.skin-organic section[role="region"] > header:first-child .icon-add {
   background-image: url(headers/images/icons/organic/add.png);
 }
 
-.skin-organic header .icon-edit {
+section[role="region"].skin-organic > header:first-child .icon-edit,
+.skin-organic section[role="region"] > header:first-child .icon-edit {
   background-image: url(headers/images/icons/organic/edit.png);
+}
+
+/* ----------------------------------
+  Subheader
+---------------------------------- */
+
+section[role="region"].skin-organic header h2,
+.skin-organic section[role="region"] header h2 {
+  background-color: #e7e7e7;
+  color: #4d4d4d;
+  border: none;
 }

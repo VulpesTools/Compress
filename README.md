@@ -6,14 +6,14 @@ Templates based [Building Firefox OS](http://buildingfirefoxos.com/)
 
 - [x] Action Menu
 - [x] Buttons
-- [ ] Confirm
-- [ ] Drawer
-- [ ] Edit Mode
+- [x] Confirm
+- [x] Drawer
+- [x] Edit Mode
 - [ ] Filters
-- [ ] Headers
-- [ ] Input areas
-- [ ] Lists
-- [ ] Object Menu
+- [x] Headers
+- [x] Input areas
+- [x] Lists
+- [x] Object Menu
 - [ ] Progress and activity
 - [ ] Scrolling
 - [ ] Seek bars
