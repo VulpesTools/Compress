@@ -14,14 +14,14 @@ Templates based [Building Firefox OS](http://buildingfirefoxos.com/)
 - [x] Input areas
 - [x] Lists
 - [x] Object Menu
-- [ ] Progress and activity
-- [ ] Scrolling
-- [ ] Seek bars
-- [ ] Status
-- [ ] Switches
-- [ ] Tabs
-- [ ] Toolbars
-- [ ] Value Selectors
+- [x] Progress and activity
+- [x] Scrolling
+- [x] Seek bars
+- [x] Status
+- [x] Switches
+- [x] Tabs
+- [x] Toolbars
+- [x] Value Selectors
 
 ###New
 * Header
